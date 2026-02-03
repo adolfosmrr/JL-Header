@@ -1,0 +1,203 @@
+@import 'tailwindcss';
+@source './index.html';
+
+@font-face {
+    font-family: 'Harmony';
+    src: url("../assets/fonts/harmony.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "GroteskRegular";
+    src: url("../assets/fonts/FamiljenGrotesk-Regular.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "GroteskMedium";
+    src: url("../assets/fonts/FamiljenGrotesk-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "GroteskSemi";
+    src: url("../assets/fonts/FamiljenGrotesk-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "GroteskBold";
+    src: url("../assets/fonts/FamiljenGrotesk-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Keyframes */
+
+@keyframes ringPhone {
+    0%, 100% {
+        transform: rotate(0deg);
+    } 
+    
+    25% {
+        transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(-5deg)
+    }
+}
+
+@theme {
+
+    /* Breakpoint */
+
+    --breakpoint-1440: 1440px;
+
+    /* Spacing */
+
+    --spacing-14: 14px;
+    --spacing-18: 18px;
+    --spacing-25: 25px;
+    --spacing-30: 30px;
+    --spacing-35: 35px;
+    --spacing-50: 50px;
+    --spacing-60: 60px;
+    --spacing-165: 165px;
+
+    /* Radiud */
+
+    --radius-5: 5px;
+    --radius-10: 10px;
+
+    /* Font Color */
+
+    --color-semiBlack: #1D1D1D;
+    --color-gold: #F1C33A;
+    --color-lightGray: #D2C8BE;
+
+    /* Font Size */
+
+    --text-14: 14px;
+    --text-16: 16px;
+    --text-18: 18px;
+    --text-22: 22px;
+    --text-88: 88px;
+    --text-28: 28px;
+
+    /* Font Family */
+
+    --font-harmony: "Harmony", serif, system-ui;
+    --font-groRegular: "GroteskRegular", sans-serif, system-ui;
+    --font-groMedium: "GroteskMedium", sans-serif, system-ui;
+    --font-groSemi: "GroteskSemi", sans-serif, system-ui;
+    --font-groBold: "GroteskBold", sans-serif, system-ui;
+
+    /* Animations */
+
+    --animate-ring: ringPhone 0.5s linear infinite;
+
+}
+
+/* Header */
+
+.header_nav-text.active {
+    color: var(--color-gold);
+}
+
+.header_nav-svg.active {
+    transform: rotate(90deg)
+}
+
+.backdropBlurBefore::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+/* Header Burger Button Animation */
+
+.headerWrapper.active {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.burgerLineTop.active {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.burgerLineMiddle.active {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.burgerLineBottom.active {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+}
+
+/* Header Links Wrapper */
+
+.header_links-wrapper.active {
+    padding: 18px 0;
+    border-bottom: 1px;
+}
+
+.header_links-content.active {
+    grid-template-rows: 1fr;
+}
+
+/* Header Links Text & SVG */
+
+.header_nav-text.active, .header_nav-svg.active  {
+    color: var(--color-gold);
+}
+
+.header_nav-svg.active {
+    transform: rotate(90deg);
+}
+
+/* Header Sublinks Wrapper */
+
+.header_sublinks-wrapper.active {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.header_sublinks-content.active, .custom-closets.active {
+    grid-template-rows: 1fr;
+}
+
+/* Header Overlay */
+
+.header_overlay.active {
+    opacity: 1;
+}
+
+/* Link Hover */
+
+.word-highlight.active {
+    background: linear-gradient(to bottom, transparent 40%, #F3CC4F 40%, #F3CC4F 60%, transparent 90%);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    display: inline-block;
+}
